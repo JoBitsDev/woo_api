@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-
+import 'package:woo_api/org/jobits/woo/main/ui/Conection.dart';
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'JoBits'),
     );
 
   }
@@ -117,7 +117,16 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed:(){
+          final route = MaterialPageRoute(
+              builder: (context){
+            return Conection();
+          }
+          );
+          Navigator.push(context, route);
+        } //_incrementCounter
+
+        ,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
